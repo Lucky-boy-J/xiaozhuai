@@ -1,0 +1,63 @@
+llm:
+  model: models/Qwen3.5-9B-UD/Qwen3.5-9B-UD-Q4_K_XL.gguf
+  mmproj: models/Qwen3.5-9B-UD/mmproj-F16.gguf
+  host: 127.0.0.1
+  port: 8080
+  ctx_size: 32768
+  n_gpu_layers: 99        # 16GB显存，全部层上GPU
+  thinking: false
+  system_prompt: "你是小猪AI，一个本地运行的智能助手。你诚实、准确，对于不确定的信息会主动说明。"
+  params_normal:
+    temperature: 0.7
+    top_p: 0.8
+    top_k: 20
+    min_p: 0.0
+    presence_penalty: 1.5
+  params_thinking:
+    temperature: 1.0
+    top_p: 0.95
+    top_k: 20
+    min_p: 0.0
+    presence_penalty: 1.5
+  
+
+asr:
+  model_dir: models/qwen3-asr/
+  use_dml: true
+  use_vulkan: true
+  encoder_prec: int4
+  enable_aligner: false   # 对话场景不需要字幕时间戳
+  
+
+tts:
+  model_dir: models/model-base/
+  default_voice: assets/voices/xiaozhu.json
+  use_dml: true
+  use_vulkan: true
+  streaming: true
+  temperature: 0.8
+  sub_temperature: 0.8
+  seed: 42
+  sub_seed: 45
+
+    
+
+
+search:
+  backend: serpapi          # serper / serpapi / brave / tavily / duckduckgo
+  api_key: "97b9a2ce309f6b4bb0a9ddc40fac8179c9b825c9a1bd9afe4dee12a7222a681b"
+  max_results: 6
+  timeout: 10
+  time_window_days: 30
+  min_credibility: 0.5
+  trusted_domains: []
+  blocked_domains: []
+  allow_unknown_date: true
+  source_mode: any          # any / prefer / only
+  source_domains: [  "xinhuanet.com",  "people.com.cn",  "reuters.com",
+    "apnews.com",  "bbc.com",  "cnn.com",  "afp.com",  "upi.com",
+      "defense.gov",  "state.gov",  "un.org",  "chaofan.com",  "qq.com", "hupu.com" ]      
+  # tavily 专用
+  search_depth: advanced
+  topic: general
+

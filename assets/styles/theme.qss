@@ -1,0 +1,245 @@
+QMainWindow, QWidget {
+    background: #f7f7f8;
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    font-size: 14px; color: #1a1a1a;
+}
+#sidebar {
+    background: #f0f0f0;
+    border-right: 1px solid #e0e0e0;
+}
+#sidebar_title {
+    color: #333; font-size: 15px;
+    font-weight: 600; padding: 4px 6px;
+}
+#new_session_btn {
+    background: #fff; color: #333;
+    border: 1px solid #ddd; border-radius: 8px;
+    padding: 8px 12px; text-align: left; font-size: 13px;
+}
+#new_session_btn:hover { background: #e8e8e8; border-color: #ccc; }
+#session_list {
+    background: transparent; border: none;
+    color: #333; font-size: 13px;
+}
+#session_list::item {
+    padding: 9px 10px; border-radius: 8px; margin: 1px 2px;
+}
+#session_list::item:selected { background: #e0e0e0; color: #111; }
+#session_list::item:hover { background: #e8e8e8; }
+QMenu#context_menu {
+    background: #fff; border: 1px solid #e0e0e0;
+    border-radius: 8px; padding: 4px;
+}
+QMenu#context_menu::item {
+    padding: 8px 20px; border-radius: 6px; color: #c0392b;
+}
+QMenu#context_menu::item:selected { background: #fff0f0; }
+#topbar {
+    background: #f7f7f8;
+    border-bottom: 1px solid #ebebeb;
+}
+#topbar_title {
+    color: #1a1a1a; font-size: 15px; font-weight: 600;
+}
+#status_label { color: #aaa; font-size: 12px; }
+#think_btn {
+    background: #fff; color: #555;
+    border: 1px solid #ddd; border-radius: 16px;
+    padding: 4px 14px; font-size: 13px;
+}
+#think_btn:hover { background: #f5f5f5; }
+#think_btn:checked {
+    background: #eef4ff; color: #2b5fce; border-color: #aac4f0;
+}
+#chat_scroll, #chat_container { background: #f7f7f8; }
+#bubble_user {
+    background: #2b5fce; color: #fff;
+    border-radius: 18px 4px 18px 18px;
+}
+#bubble_user QLabel { color: #fff; background: transparent; }
+#bubble_assistant {
+    background: #ffffff; color: #1a1a1a;
+    border-radius: 4px 18px 18px 18px;
+    border: 1px solid #ebebeb;
+}
+#bubble_assistant QLabel { color: #1a1a1a; background: transparent; }
+#input_bar_widget { background: #f7f7f8; }
+#input_frame {
+    background: #ffffff;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 16px;
+}
+#input_frame:focus-within { border-color: #2b5fce; }
+#input_edit {
+    background: transparent; color: #1a1a1a;
+    border: none; font-size: 14px;
+}
+#tool_btn {
+    background: transparent; border: none;
+    border-radius: 6px; font-size: 16px; color: #888;
+}
+#tool_btn:hover { background: #f0f0f0; }
+#tool_btn:pressed { background: #ffe0e0; color: #e74c3c; }
+#char_count { color: #ccc; font-size: 11px; }
+#img_hint { color: #2b5fce; font-size: 12px; }
+#send_btn {
+    background: #2b5fce; color: #fff;
+    border-radius: 8px; border: none;
+    font-size: 13px; font-weight: 500;
+}
+#send_btn:hover { background: #3a6ee0; }
+#send_btn:disabled { background: #c8d6f5; color: #fff; }
+#stop_btn {
+    background: #ff4d4f; color: #fff;
+    border-radius: 8px; border: none; font-size: 13px;
+}
+#stop_btn:hover { background: #ff7875; }
+QScrollBar:vertical {
+    background: transparent; width: 5px; margin: 0;
+}
+QScrollBar::handle:vertical {
+    background: #d0d0d0; border-radius: 3px; min-height: 24px;
+}
+QScrollBar::handle:vertical:hover { background: #aaa; }
+QScrollBar::add-line:vertical,
+QScrollBar::sub-line:vertical { height: 0; }
+QSplitter::handle { background: #e0e0e0; width: 1px; }
+#tool_btn_top {
+background: transparent; border: none;
+border-radius: 8px; font-size: 18px;
+}
+#tool_btn_top:hover { background: #f0f0f0; }
+#tool_btn_top:checked { background: #fff0f0; }
+
+/* AI 气泡内的 QTextBrowser */
+#bubble_assistant_text {
+    background: transparent;
+    color: #1a1a1a;
+    border: none;
+    font-size: 14px;
+    line-height: 1.7;
+    selection-background-color: #c8d6f5;
+}
+
+/* 用户气泡文字 */
+#bubble_user_text {
+    color: #ffffff;
+    background: transparent;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Markdown 代码块 */
+#bubble_assistant_text code {
+    background: #f0f4f8;
+    color: #c7254e;
+    border-radius: 3px;
+    padding: 1px 5px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 13px;
+}
+#bubble_assistant_text pre {
+    background: #f6f8fa;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-x: auto;
+}
+
+/* Markdown 表格 */
+#bubble_assistant_text table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 8px 0;
+}
+#bubble_assistant_text th, #bubble_assistant_text td {
+    border: 1px solid #e0e0e0;
+    padding: 6px 12px;
+    text-align: left;
+}
+#bubble_assistant_text th {
+    background: #f5f5f5;
+    font-weight: 600;
+}
+#bubble_assistant_text tr:nth-child(even) {
+    background: #fafafa;
+}
+
+/* 引用块 */
+#bubble_assistant_text blockquote {
+    border-left: 3px solid #2b5fce;
+    margin: 4px 0;
+    padding: 4px 12px;
+    color: #666;
+    background: #f8f9ff;
+}
+
+/* 快捷指令面板 */
+#command_palette {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+}
+#palette_hint {
+    color: #aaa;
+    font-size: 11px;
+    background: #f8f8f8;
+    border-bottom: 1px solid #f0f0f0;
+    border-radius: 12px 12px 0 0;
+    padding: 0 8px;
+}
+#palette_list {
+    background: transparent;
+    border: none;
+    font-size: 13px;
+    color: #333;
+    outline: none;
+}
+#palette_list::item {
+    height: 40px;
+    padding: 0 8px;
+    border-radius: 6px;
+    margin: 1px 4px;
+}
+#palette_list::item:selected {
+    background: #eef4ff;
+    color: #2b5fce;
+}
+#palette_list::item:hover {
+    background: #f5f5f5;
+}
+#doc_attachment_bar {
+    background: #f7f7f8;
+    border: 1px solid #e8e8e8;
+    border-radius: 10px;
+}
+#doc_attachment_label {
+    color: #555;
+    font-size: 12px;
+}
+#doc_attachment_btn {
+    background: #ffffff;
+    color: #555;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 2px 10px;
+    font-size: 12px;
+}
+#doc_attachment_btn:hover { background: #f5f5f5; }
+#doc_attachment_btn:checked {
+    background: #eef4ff;
+    color: #2b5fce;
+    border-color: #aac4f0;
+}
+#doc_attachment_remove {
+    background: transparent;
+    border: none;
+    color: #888;
+    font-size: 14px;
+    border-radius: 11px;
+}
+#doc_attachment_remove:hover { background: #ffe0e0; color: #e74c3c; }
